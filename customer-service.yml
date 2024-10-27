@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: CUSTOMER-SERVICE  
+    name: customer-service  # Nom du service en majuscule
   boot:
     admin:
       client:
@@ -27,3 +27,13 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka/
+resilience4j:
+  circuitbreaker:
+    instances:
+      myService:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000 # 10 secondes
+        permittedNumberOfCallsInHalfOpenState: 3
+
