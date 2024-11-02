@@ -9,9 +9,9 @@ spring:
       client:
         url: ${ADMIN_SERVER=http://adminserver:8085}
   datasource:
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/customer
-    password: root
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://customerdb:5432/customer}
+    password: ${SPRING_DATASOURCE_PASSWORD:root}
   jpa:
     hibernate:
       ddl-auto: update
