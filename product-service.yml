@@ -10,7 +10,7 @@ spring:
         url: ${ADMIN_SERVER=http://adminserver:8085}
   datasource:
     username: ${SPRING_DATASOURCE_USERNAME:postgres}
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://productdb:5432/product}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://productdb:1011/product}
     password: ${SPRING_DATASOURCE_PASSWORD:root}
   jpa:
     hibernate:
